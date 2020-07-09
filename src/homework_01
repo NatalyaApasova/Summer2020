@@ -34,13 +34,15 @@ function sqr(x) {
 }
 
 function sqrN(x, n) {
-    return x ** n;
+  return x ** n;
 }
 
 function factorial(x) {
   if (x > 0) {
     let result = x;
-    if (x === 1) return result;
+    if (x === 1) {
+      return result;
+    }
     do {
       result = result * (x - 1);
       x -= 1;
@@ -64,8 +66,12 @@ function factorial(x) {
 function factorial(x) {
   let num = 1;
   let result = 1;
-  if (x === undefined || x <= 0) return 'Enter the number bigger than 0';
-  if (x === 1) return result;
+  if (x === undefined || x <= 0) {
+    return 'Enter the number bigger than 0';
+  }
+  if (x === 1) {
+    return result;
+  }
   do {
     num += 1;
     result = result * num;
@@ -76,11 +82,15 @@ function factorial(x) {
 
 function round(x) {
   if (x >= 0) {
-    if (x % 1 > 0.5) return +x.toFixed();
+    if (x % 1 > 0.5) {
+      return +x.toFixed();
+    }
     return x - (x % 1);
   } else {
     let absX = abs(x);
-    if (absX % 1 > 0.5) return -absX.toFixed();
+    if (absX % 1 > 0.5) {
+      return -absX.toFixed();
+    }
     return -1 * (absX - (absX % 1));
   }
 }
@@ -94,7 +104,9 @@ function rectangle(width, height) {
 }
 
 function rightTriangle(lines) {
-  if (!lines || lines <= 0 || lines < 2) return 'Enter the number bigger than 2 and smaller than 100'
+  if (!lines || lines <= 0 || lines < 2) {
+    return 'Enter the number bigger than 2 and smaller than 100';
+  }
   let asterisk = '*';
   console.log(asterisk);
   for (let i = 1; i < lines; i++) {
@@ -117,7 +129,9 @@ function equilateralTriangle(lines) {
 }
 
 function rhombus(lines) {
-  if (!lines || lines <= 0 || lines < 3) return 'Enter the number bigger than 3'
+  if (!lines || lines <= 0 || lines < 3) {
+    return 'Enter the number bigger than 3';
+  }
   let asterisk = '*';
   var space = '\u00A0';
   let maxAsterisks = lines;
@@ -132,7 +146,9 @@ function rhombus(lines) {
   }
   let maxAsterisksLine = asterisk.repeat(maxAsterisks);
   console.log(maxAsterisksLine);
-  if (lines % 2 === 0) console.log(asterisk.repeat(maxAsterisks-1));
+  if (lines % 2 === 0) {
+    console.log(asterisk.repeat(maxAsterisks - 1));
+  }
   for (let i = 2; i <= lines / 2; i++) {
     let asterisks =  (lines % 2 === 0)
     ? asterisk.repeat(maxAsterisks - (i * 2) + 1)
@@ -141,5 +157,7 @@ function rhombus(lines) {
     let line = spaces + asterisks + spaces;
     console.log(line);
   }
-  if (lines % 2 !== 0) console.log(firstLine);
+  if (lines % 2 !== 0) {
+    console.log(firstLine)
+  };
 }
