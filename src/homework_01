@@ -84,3 +84,62 @@ function round(x) {
     return -1 * (absX - (absX % 1));
   }
 }
+
+function rectangle(width, height) {
+  let asterisk = '*';
+  let str = asterisk.repeat(width);
+  for (let i = 1; i <= height; i++) {
+    console.log(str + "\u00A0" + '(' + i + ')');;
+  }
+}
+
+function rightTriangle(lines) {
+  if (!lines || lines <= 0 || lines < 2) return 'Enter the number bigger than 2 and smaller than 100'
+  let asterisk = '*';
+  console.log(asterisk);
+  for (let i = 1; i < lines; i++) {
+    console.log(asterisk.repeat(2 * i + 1));
+  }
+}
+
+function equilateralTriangle(lines) {
+  if (!lines || lines <= 0 || lines < 2) return 'Enter the number bigger than 2 and smaller than 21'
+  let asterisk = '*';
+  let space = '\u00A0';
+  let maxAsterisks = lines * 5;
+  let spacesFirst = space.repeat((maxAsterisks) - 1);
+  console.log(spacesFirst + asterisk + spacesFirst);
+  for (let i = 1; i < lines; i++) {
+    let asterisks = asterisk.repeat(5 * i + 1);
+    let spaces = space.repeat(maxAsterisks - (5 * i + 1) / 2);
+    console.log(spaces + asterisks + spaces);
+  }
+}
+
+function rhombus(lines) {
+  if (!lines || lines <= 0 || lines < 3) return 'Enter the number bigger than 3'
+  let asterisk = '*';
+  var space = '\u00A0';
+  let maxAsterisks = lines;
+  let spacesFirstLine = space.repeat(((maxAsterisks) / 2 - 1).toFixed());
+  let firstLine = spacesFirstLine + asterisk + spacesFirstLine;
+  console.log(firstLine);
+  for (let i = 2; i < lines / 2; i++) {
+    let asterisks = asterisk.repeat(2 * i);
+    let spaces = space.repeat(((maxAsterisks - (2 * i - 1)) / 2));
+    let line = spaces + asterisks + spaces;
+    console.log(line);
+  }
+  let maxAsterisksLine = asterisk.repeat(maxAsterisks);
+  console.log(maxAsterisksLine);
+  if (lines % 2 === 0) console.log(asterisk.repeat(maxAsterisks-1));
+  for (let i = 2; i <= lines / 2; i++) {
+    let asterisks =  (lines % 2 === 0)
+    ? asterisk.repeat(maxAsterisks - (i * 2) + 1)
+    : asterisk.repeat(maxAsterisks - (i * 2) + 2);
+    let spaces = space.repeat((maxAsterisks - (maxAsterisks - i * 2) - 1) / 2);
+    let line = spaces + asterisks + spaces;
+    console.log(line);
+  }
+  if (lines % 2 !== 0) console.log(firstLine);
+}
