@@ -25,7 +25,7 @@ function integerDiv(a, b) {
 }
 
 function abs(a) {
-  a < 0 ? -a : a;
+  return a < 0 ? -a : a;
 }
 
 function sqr(x) {
@@ -97,9 +97,11 @@ function round(x) {
 function rectangle(width, height) {
   let asterisk = '*';
   let str = asterisk.repeat(width);
+  let rect = '\n';
   for (let i = 1; i <= height; i++) {
-    console.log(str + "\u00A0" + '(' + i + ')');;
+    rect += str + "\u00A0" + '\n';
   }
+  return rect;
 }
 
 function rightTriangle(lines) {
@@ -107,10 +109,11 @@ function rightTriangle(lines) {
     return  new Error ('Enter the number bigger than 2 and smaller than 100');
   }
   let asterisk = '*';
-  console.log(asterisk);
+  let triangle = '\n';
   for (let i = 1; i < lines; i++) {
-    console.log(asterisk.repeat(2 * i + 1));
+    triangle += asterisk.repeat(2 * i + 1) + '\n';
   }
+  return '\n' + asterisk + triangle;
 }
 
 function equilateralTriangle(lines) {
@@ -121,12 +124,14 @@ function equilateralTriangle(lines) {
   let space = '\u00A0';
   let maxAsterisks = lines * 5;
   let spacesFirst = space.repeat((maxAsterisks) - 1);
-  console.log(spacesFirst + asterisk + spacesFirst);
+  let triangle = '\n';
+  let firstLine = spacesFirst + asterisk + spacesFirst;
   for (let i = 1; i < lines; i++) {
     let asterisks = asterisk.repeat(5 * i + 1);
     let spaces = space.repeat(maxAsterisks - (5 * i + 1) / 2);
-    console.log(spaces + asterisks + spaces);
+    triangle += spaces + asterisks + '\n';
   }
+  return firstLine + triangle;
 }
 
 function rhombus(lines) {
@@ -137,28 +142,24 @@ function rhombus(lines) {
   var space = '\u00A0';
   let maxAsterisks = lines;
   let spacesFirstLine = space.repeat(((maxAsterisks) / 2 - 1).toFixed());
-  let firstLine = spacesFirstLine + asterisk + spacesFirstLine;
-  console.log(firstLine);
-  for (let i = 2; i < lines / 2; i++) {
-    let asterisks = asterisk.repeat(2 * i);
-    let spaces = space.repeat(((maxAsterisks - (2 * i - 1)) / 2));
-    let line = spaces + asterisks + spaces;
-    console.log(line);
-  }
+  let firstLine = spacesFirstLine + asterisk;
+  let upperLines = '\n';
+  let lowerLines = '\n';
   let maxAsterisksLine = asterisk.repeat(maxAsterisks);
-  console.log(maxAsterisksLine);
-  if (lines % 2 === 0) {
-    console.log(asterisk.repeat(maxAsterisks - 1));
+  for (let i = 2; i < lines / 2; i++) {
+    let asterisks = asterisk.repeat(2 * i - 1);
+    let spaces = space.repeat(((maxAsterisks - (2 * i - 1)) / 2));
+    upperLines += spaces + asterisks + '\n';
   }
   for (let i = 2; i <= lines / 2; i++) {
-    let asterisks =  (lines % 2 === 0)
+    let asterisks = (lines % 2 === 0)
     ? asterisk.repeat(maxAsterisks - (i * 2) + 1)
     : asterisk.repeat(maxAsterisks - (i * 2) + 2);
     let spaces = space.repeat((maxAsterisks - (maxAsterisks - i * 2) - 1) / 2);
-    let line = spaces + asterisks + spaces;
-    console.log(line);
+    lowerLines += spaces + asterisks + spaces + '\n';
   }
-  if (lines % 2 !== 0) {
-    console.log(firstLine);
+  if(lines%2===0){
+    return '\n' + firstLine + upperLines + maxAsterisksLine + '\n' + maxAsterisksLine + lowerLines + '\n';
   }
+  return '\n' + firstLine + upperLines + maxAsterisksLine + lowerLines + firstLine + '\n';
 }
