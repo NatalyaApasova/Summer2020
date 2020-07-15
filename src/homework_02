@@ -1,0 +1,115 @@
+function reverseString(str) {
+  let arr = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    arr.push(str[i]);
+  }
+  let revString = '' + arr;
+  return revString.replace(/,/g, '');
+}
+
+function endsWith(str, substr) {
+  for (let i = str.length - 1; i >= 0; i--) {
+    for (let j = substr.length - 1; j >= 0; j--) {
+      return str[i].toLowerCase() === substr[j] ? true : false;
+    }
+  }
+}
+
+function startsWith(str, substr) {
+  for (let i = 0; i <= str.length - 1; i++) {
+    for (let j = 0; j <= substr.length - 1; j++) {
+      return str[i].toLowerCase() === substr[j] ? true : false;
+    }
+  }
+}
+
+function isCamelCase(str) {
+  if (str[0] === str[0].toUpperCase() || str !== str.replace(/[^0-9][^a-zA-Z]/g, '')) {
+    return false;
+  }
+  for (let i = 0; i <= str.length - 1; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function isSnakeCase(str) {
+  if (str !== str.replace(/\W/g, '')) {
+    return false;
+  }
+  return str.match(/_/g) ? true : false;
+}
+
+function isKebabCase(str) {
+  if (str !== str.replace(/[^a-zA-Z\d-]/g, '')) {
+    return false;
+  }
+  return str.match(/-/g) ? true : false;
+}
+
+function isNaN(value) {
+  return +value || +value === 0 ? false : true;
+}
+
+function isFinite(value) {
+  return isNaN(value)
+    ? new Error('Enter a number')
+    : (value !== Infinity ? true : false);
+}
+
+function isFalsy(value) {
+  return !value ? true : false;
+}
+
+function countWords(text, word, caseSensitive) {
+  let wordsArr;
+  caseSensitive 
+    ? wordsArr = text.split(' ')
+    : (wordsArr = text.toLowerCase().split(' ')) && (word = word.toLowerCase());
+  words = 0;
+  for (let i = 0; i <= wordsArr.length - 1; i++) {
+    if (word === wordsArr[i]) {
+      words++;
+    }
+  }
+  return words;
+}
+
+function numbersBetween(numberOne, numberTwo) {
+  let num;
+  let allNumbers = [];
+  for (i = numberOne; i <= numberTwo; i++) {
+    allNumbers.push(i);
+  }
+  return allNumbers;
+}
+
+function oddNumbersBetween(numberOne, numberTwo) {
+  let num;
+  let allNumbers = [];
+  for (i = numberOne; i <= numberTwo; i++) {
+    if(i % 2 !== 0) {
+      allNumbers.push(i);
+    }
+  }
+  return allNumbers;
+}
+
+function digitInWord(digit) {
+  let dictionary = ['oh', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  let lastDigit = digit % 10;
+  return dictionary[lastDigit];
+}
+
+function createFunctions(num) {
+  let funkArr = [];
+  for (let i = 0; i < num; i++) {
+    let innerFunc = function() {
+      return i;
+    }
+    funkArr.push(innerFunc);
+  }
+  return funkArr;
+}
