@@ -1,5 +1,84 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__block {
+  height: 100px;
+}
+
+.header__block_primarybg {
+  background-color: #ff7f7f;
+}
+
+.logo__image {
+  width: 80px;
+  height: 60px;
+}
+.logo__image:hover {
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+.header__navigation {
+  width: 60%;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navigation-list__item {
+  display: inline-block;
+  width: 20%;
+  font-weight: 700;
+  font-size: 1rem;
+  list-style: none;
+  color: #fff;
+}
+
+.navigation-list__item_hover:hover {
+  cursor: pointer;
+  transform: scaleY(2);
+}
+
+.search-form__field {
+  overflow: hidden;
+  position: relative;
+  width: 0px;
+  border: 1px solid #fff;
+  border-radius: 45px;
+  font-size: 100%;
+  opacity: 0;
+  transition: opacity 2s;
+  transition: width 0.5s linear;
+}
+.search-form__field:focus {
+  padding-left: 2px;
+  width: 250px;
+  border: 1px solid #fff;
+  border-radius: 45px;
+  outline: none;
+  opacity: 1;
+  transition: opacity 2s;
+  transition: width 0.5s linear;
+}
+
+.search-form__image {
+  cursor: pointer;
+}
+
+html {
+  font-family: Arial;
+  font-size: 16px;
+}
+
 body {
   margin: 0 auto;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

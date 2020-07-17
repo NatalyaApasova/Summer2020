@@ -1,0 +1,21 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.header__navigation
+  width: 60%
+
+.navigation-list
+  @include space-around-flex()
+
+.navigation-list__item
+  display: inline-block
+  width: 20%
+  font-weight: 700
+  font-size: 1rem
+  list-style: none
+  color: $secondary-color
+
+.navigation-list__item_hover
+  &:hover
+    cursor: pointer
+    transform: scaleY(2)

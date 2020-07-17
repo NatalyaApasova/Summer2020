@@ -1,0 +1,11 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.header
+  @include space-around-flex()
+
+.header__block
+  height: 100px
+
+.header__block_primarybg
+  background-color: $primary-color
