@@ -2,10 +2,8 @@
 @use "../mixins" as *
 
 .search-form__field
-  overflow: hidden
   position: relative
   width: 0px
-
   border: $border
   border-radius: 45px
   font-size: 100%
@@ -15,13 +13,11 @@
   &:focus
     width: 250px
     border: $border
-    border-radius: 45px
+    @include radius ()
     outline: none
     opacity: 1
     transition: opacity 2s
     transition: width .5s linear
 
 .search-form__image
-  cursor: pointer
-
-
+  @include pointer()

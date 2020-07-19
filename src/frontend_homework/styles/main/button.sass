@@ -1,0 +1,17 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.button
+  @include centered-flex ()
+
+.button__item
+  border: $border
+  @include radius ()
+  width: 200px
+  height: 50px
+  &:hover
+    @include pointer ()
+
+.button__item_colors-sec
+  color: $primary-color
+  background-color: $secondary-color

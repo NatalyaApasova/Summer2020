@@ -14,8 +14,10 @@
   font-size: 1rem
   list-style: none
   color: $secondary-color
+  -ms-user-select: none
+  user-select: none
 
 .navigation-list__item_hover
   &:hover
-    cursor: pointer
+    @include pointer()
     transform: scaleY(2)

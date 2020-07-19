@@ -12,3 +12,17 @@
   display: flex
   justify-content: space-between
   align-items: center
+
+@mixin pointer ()
+  cursor: pointer
+
+@mixin radius ()
+  border-radius: 45px
+
+@mixin ref-reset
+  text-decoration: none
+  cursor: pointer
+  &:visited
+    text-decoration: none
+  &:active
+    text-decoration: none
