@@ -3,6 +3,7 @@
 
 .button
   @include centered-flex ()
+  outline: none
 
 .button__item
   border: $border
@@ -11,7 +12,11 @@
   height: 50px
   &:hover
     @include pointer ()
+    color: $secondary-color
+    background: rgb(245,216,229)
+    background: radial-gradient(circle, rgba(245,216,229,1) 1%, rgba(221,70,100,1) 99%)
 
 .button__item_colors-sec
   color: $primary-color
   background-color: $secondary-color
+

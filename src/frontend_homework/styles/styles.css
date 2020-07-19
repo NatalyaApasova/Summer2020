@@ -8,7 +8,7 @@
   height: 100px;
 }
 
-.header__block_primarybg {
+.header__block_primary-bg {
   background-color: #ff7f7f;
   opacity: 0.8;
 }
@@ -77,6 +77,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: none;
 }
 
 .button__item {
@@ -87,6 +88,9 @@
 }
 .button__item:hover {
   cursor: pointer;
+  color: #fff;
+  background: #f5d8e5;
+  background: radial-gradient(circle, #f5d8e5 1%, #dd4664 99%);
 }
 
 .button__item_colors-sec {
@@ -96,27 +100,32 @@
 
 .section {
   display: flex;
+  align-items: center;
 }
 
 .section__block {
   position: relative;
-  bottom: 100px;
+  bottom: 300px;
   width: 100%;
-  height: 140vh;
+  height: 200vh;
 }
 
 .section__block_bg-img {
+  position: absolute;
+  top: 1px;
   background-image: url("../assets/section_first_bg.png");
   background-color: #ff7f7f;
-  background-size: 100% auto;
+  background-size: contain;
   repeat: no-repeat;
   z-index: -1;
 }
 
 .article-block__elem {
   width: 450px;
-  margin-left: 50px;
-  margin-top: 250px;
+  margin-left: 60px;
+  padding-left: 50px;
+  margin-top: 280px;
+  user-select: none;
 }
 
 .article-title_secondary {
@@ -129,6 +138,74 @@
   color: #fff;
 }
 
+.section__block-two {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+}
+
+.section__block_bg-primary {
+  background-color: #ff7f7f;
+  background-size: 100% 140vh;
+  repeat: no-repeat;
+  z-index: 2;
+}
+
+.article-block__elem_centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.article-block__text_centered {
+  text-align: center;
+}
+
+.card-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-group__elem {
+  margin: 100px 0;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 25%;
+}
+
+.card-img_rotate {
+  transition: 3s;
+}
+.card-img_rotate:hover {
+  transform: rotate(360deg);
+}
+
+.card-img_rotate-left {
+  transition: 3s;
+}
+.card-img_rotate-left:hover {
+  transform: rotate(-360deg);
+}
+
+.decor-image_position {
+  position: absolute;
+}
+
+.decor-image__elem-left {
+  top: 300px;
+}
+
+.decor-image__elem-right {
+  left: 85vw;
+}
+
 html {
   font-family: Arial;
   font-size: 16px;
@@ -137,17 +214,6 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: #111;
-}
-a:visited {
-  text-decoration: none;
-}
-a:active {
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

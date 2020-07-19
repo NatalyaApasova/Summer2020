@@ -1,0 +1,50 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.section__block-two
+  position: absolute
+  top: 100vh
+  width: 100%
+
+.section__block_bg-primary
+  background-color: $primary-color
+  background-size: 100% 140vh
+  repeat: no-repeat
+  z-index: 2
+
+.article-block__elem_centered
+  @include centered-flex ()
+  flex-direction: column
+
+.article-block__text_centered
+  text-align: center
+
+.card-group
+  @include centered-flex ()
+
+.card-group__elem
+  margin: 100px 0
+
+.card
+  @include centered-flex ()
+  flex-wrap: wrap
+  width: 25%
+
+.card-img_rotate
+  transition: 3s
+  &:hover
+    transform: rotate(360deg)
+
+.card-img_rotate-left
+  transition: 3s
+  &:hover
+    transform: rotate(-360deg)
+
+.decor-image_position
+  position: absolute
+
+.decor-image__elem-left
+  top: 300px
+
+.decor-image__elem-right
+  left: (100vw - 15)
