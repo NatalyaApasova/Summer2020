@@ -11,26 +11,17 @@
   width: 100%
   height: 200vh
 
-.section__block_bg-img
+.section__bg-img
+  width: 100%
+  height: 200vh
   position: absolute
-  top: 1px
+  bottom: 250px
   background-image: url("../assets/section_first_bg.png")
-  background-color: $primary-color
   background-size: contain
-  repeat: no-repeat
   z-index: -1
 
-.article-block__elem
-  width: 450px
-  margin-left: 60px
-  padding-left: 50px
-  margin-top: 280px
-  user-select: none
+.section__block_bg-primary
+  background-color: $primary-color
 
-.article-title_secondary
-  font-size: 3.5rem
-  color: $secondary-color
-
-.article-block__text
-  font-size: 1.5rem
-  color: $secondary-color
+.section__block_bg-secondary
+  background-color: $secondary-color

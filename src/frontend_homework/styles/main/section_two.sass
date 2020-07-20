@@ -4,20 +4,23 @@
 .section__block-two
   position: absolute
   top: 100vh
-  width: 100%
+  width: 100vw
+  margin: 0 auto
+
+.section__block-two_border
+  &:before
+    content: ""
+    position: absolute
+    top: -100px
+    left: 50px
+    background-color: red
+    background-image: url("../assets/shape.png")
 
 .section__block_bg-primary
   background-color: $primary-color
   background-size: 100% 140vh
   repeat: no-repeat
   z-index: 2
-
-.article-block__elem_centered
-  @include centered-flex ()
-  flex-direction: column
-
-.article-block__text_centered
-  text-align: center
 
 .card-group
   @include centered-flex ()

@@ -7,7 +7,7 @@
   <title>Sushime</title>
 </head>
 <body>
-  <header class="header header__block header__block_primary-bg">
+  <header class="header header__block header__block_primarybg">
     <div class="logo logo__block"><img class="logo__image" src="assets/logo.png"></div>
     <nav class="navigation header__navigation">
       <ul class="navigation-list">
@@ -21,22 +21,24 @@
     <div class="search-form"><label><input class="search-form__field" type="text" name="search"><img class="search-form__image" src="assets/search.png"></label></div>
   </header>
   <main class="main">
-    <section class="section__block section__block_bg-img">
-      <div class="section__block_bg-img"></div>
+    <section class="section__block section__block_bg-primary
+">
+      <div class="section__bg-img">
+      </div>
       <div class="article-block__elem">
         <h1 class="article-title article-title_secondary">DELICIOUS SUSHI</h1>
         <article>
-          <p class="article-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+          <p class="article-block__text_sec">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
         </article>
-        <button class="button button__item button__item_colors-sec">
-          <a>ORDER NOW</a>
+        <button class="button button__item button__item_color-sec">
+          <a class="link-reset link_colors-prim" href="#">ORDER NOW</a>
         </button>
       </div>
     </section>
-    <section class="section__block-two section__block_bg-primary">
-      <div class="article-block__elem_centered">
+    <section class="section__block-two section__block-two_border section__block_bg-primary">
+      <div class="article-block__elem-two article-block__elem_centered">
         <h2 class="article-title article-title_secondary article-block__text">BEST SELLER</h2>
-        <p class="article-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        <p class="article-block__text_sec">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</article>
       </div>
       <img class="decor-image_position decor-image__elem-left" src="assets/decor_img1.png">
       <img class="decor-image_position decor-image__elem-right" src="assets/decor_img2.png">
@@ -44,21 +46,34 @@
         <div class="card">
           <img class="card-img_rotate" src="assets/card1.png">
           <h3 class="article-title article-title_secondary">Title here</h3>
-          <p class="article-block__text article-block__text_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="article-block__text article-block__text_centered article-block__text_sec">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="card">
           <img class="card-img_rotate-left" src="assets/card2.png">
           <h3 class="article-title article-title_secondary">Title here</h3>
-          <p class="article-block__text article-block__text_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="article-block__text article-block__text_centered article-block__text_sec">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="card">
           <img class="card-img_rotate" src="assets/card3.png">
           <h3 class="article-title article-title_secondary">Title here</h3>
-          <p class="article-block__text article-block__text_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="article-block__text article-block__text_centered article-block__text_sec">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
     </section>
-    <section></section>
+    <section class="section section__block-three section__block_bg-secondary">
+      <div class="article-block">
+        <img class="section3-img" src="assets/sec3_image.png">
+        <div class="article-wrapper">
+          <h2 class="article-title article-title_primary">BEST TASTY</h2>
+          <article class="article-block__text section__content">
+            <p class="article-block__text_prim">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+          </article>
+          <button class="button button__item button__item_color-prim">
+            <a class="link-reset link_colors-sec" href="#">ORDER NOW</a>
+          </button>
+        </div>
+      </div>
+    </section>
     <section></section>
   </main>
   <footer>

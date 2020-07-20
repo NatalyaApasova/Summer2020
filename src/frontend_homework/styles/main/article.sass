@@ -1,0 +1,43 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.article-block
+  @include space-around-flex ()
+  width: 100%
+  user-select: none
+
+.article-block__elem
+  width: 450px
+  margin-top: 450px
+  margin-left: 60px
+  padding-left: 50px
+  user-select: none
+
+.article-block__elem-two
+  @include centered-flex ()
+  flex-wrap: wrap
+  margin: 0 auto
+  width: 50%
+  text-align: center
+
+.article-block__text_sec
+  font-size: 1.5rem
+  color: $secondary-color
+
+.article-block__text_prim
+  font-size: 1.5rem
+  color: $primary-color
+
+.article-block__elem_centered
+  @include centered-flex ()
+
+.article-block__text_centered
+  text-align: center
+
+.article-title_secondary
+  font-size: 3.5rem
+  color: $secondary-color
+
+.article-title_primary
+  font-size: 3.5rem
+  color: $primary-color
