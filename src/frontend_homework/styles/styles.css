@@ -163,6 +163,12 @@
   background: radial-gradient(circle, #f5d8e5 1%, #dd4664 99%);
 }
 
+.button__subscibe {
+  position: relative;
+  bottom: 51px;
+  left: 65vw;
+}
+
 .button__item_color-sec {
   background-color: #fff;
 }
@@ -212,23 +218,14 @@
 .section__block-two {
   position: absolute;
   top: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
-}
-
-.section__block-two_border:before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: 50px;
-  background-color: red;
-  background-image: url("../assets/shape.png");
 }
 
 .section__block_bg-primary {
   background-color: #ff7f7f;
-  background-size: 100% 140vh;
-  repeat: no-repeat;
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
   z-index: 2;
 }
 
@@ -239,7 +236,7 @@
 }
 
 .card-group__elem {
-  margin: 100px 0;
+  margin: 20px 0;
 }
 
 .card {
@@ -264,6 +261,50 @@
   transform: rotate(-360deg);
 }
 
+.section__block-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 69vh;
+  height: 100vh;
+  width: 100%;
+  z-index: 6;
+}
+
+.section__content {
+  width: 40vw;
+}
+
+.section3-img {
+  width: 473px;
+  height: 482px;
+  border: 1px solid #fff;
+  border-radius: 360px;
+}
+
+.section__block-four {
+  position: relative;
+  bottom: 74vh;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  z-index: 8;
+}
+
+.email-input__elem {
+  width: 50%;
+  height: 45px;
+  border: 1px solid #fff;
+  border-radius: 45px;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.email-input__elem_bg {
+  background-color: #f3f3f3;
+}
+
 .decor-image_position {
   position: absolute;
 }
@@ -276,25 +317,24 @@
   left: 85vw;
 }
 
-.section__block-three {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  bottom: 50vh;
-  height: 100vh;
-  width: 100vw;
+.decor-image__left-upper {
+  right: 80vw;
+  bottom: 98vh;
 }
 
-.section__content {
-  width: 40vw;
+.decor-image__left-lower {
+  right: 962px;
+  top: 400px;
 }
 
-.section3-img {
-  width: 473px;
-  height: 482px;
-  border: 1px solid #fff;
-  border-radius: 360px;
+.decor-image__right-upper {
+  left: 80vw;
+  bottom: 102vh;
+}
+
+.decor-image__right-lower {
+  right: 182px;
+  bottom: 100px;
 }
 
 html {

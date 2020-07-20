@@ -1,0 +1,22 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.section__block-four
+  position: relative
+  bottom: 74vh
+  width: 100%
+  height: 100vh
+  text-align: center
+  z-index: 8
+
+.email-input__elem
+  width: 50%
+  height: 45px
+  border: $border
+  @include radius ()
+  outline: none
+  font-size: 1.5rem
+
+.email-input__elem_bg
+  background-color: #f3f3f3
+

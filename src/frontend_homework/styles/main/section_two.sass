@@ -4,29 +4,20 @@
 .section__block-two
   position: absolute
   top: 100vh
-  width: 100vw
+  width: 100%
   margin: 0 auto
-
-.section__block-two_border
-  &:before
-    content: ""
-    position: absolute
-    top: -100px
-    left: 50px
-    background-color: red
-    background-image: url("../assets/shape.png")
 
 .section__block_bg-primary
   background-color: $primary-color
-  background-size: 100% 140vh
-  repeat: no-repeat
+  background-size: 100% 100vh
+  background-repeat: no-repeat
   z-index: 2
 
 .card-group
   @include centered-flex ()
 
 .card-group__elem
-  margin: 100px 0
+  margin: 20px 0
 
 .card
   @include centered-flex ()
@@ -42,12 +33,3 @@
   transition: 3s
   &:hover
     transform: rotate(-360deg)
-
-.decor-image_position
-  position: absolute
-
-.decor-image__elem-left
-  top: 300px
-
-.decor-image__elem-right
-  left: (100vw - 15)
