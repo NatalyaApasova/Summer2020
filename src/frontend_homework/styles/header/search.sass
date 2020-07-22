@@ -3,20 +3,21 @@
 
 .search-form__field
   position: relative
-  width: 0px
+  width: 0
   border: $border
   border-radius: 45px
   font-size: 100%
   opacity: 0
-  transition: opacity 2s
+  transition: opacity .5s linear
   transition: width .5s linear
+
   &:focus
     width: 250px
     border: $border
     @include radius ()
     outline: none
     opacity: 1
-    transition: opacity 2s
+    transition: opacity .5s linear
     transition: width .5s linear
 
 .search-form__image

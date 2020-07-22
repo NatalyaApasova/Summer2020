@@ -1,0 +1,31 @@
+@use "../variables" as *
+@use "../mixins" as *
+  
+.footer__elem
+  display: flex
+  justify-content: space-around
+  align-items: flex-end
+  position: relative
+
+.footer__section
+  display: flex
+  justify-content: space-around
+  align-items: flex-end
+  position: absolute
+  bottom: -150px
+  padding-bottom: 100px
+  height: 520px
+  width: 100%
+
+.footer__elem_dark-bg
+  background-color: $third-color
+  color: $secondary-color
+
+.footer-article-block
+  width: 30%
+  padding-left: 30px
+
+.nav-block
+  width: 45%
+  @include space-around-flex ()
+  list-style: none

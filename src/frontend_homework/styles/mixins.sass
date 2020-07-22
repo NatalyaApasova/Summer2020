@@ -1,3 +1,5 @@
+@use "variables" as *
+
 @mixin centered-flex ()
   display: flex
   justify-content: center
@@ -19,7 +21,7 @@
 @mixin radius ()
   border-radius: 45px
 
-@mixin ref-reset
+@mixin ref-reset ()
   text-decoration: none
   background-color: transparent
   cursor: pointer
@@ -27,3 +29,9 @@
     text-decoration: none
   &:active
     text-decoration: none
+
+@mixin hover ()
+  @include pointer ()
+  color: $secondary-color
+  background: rgb(245,216,229)
+  background: radial-gradient(circle, rgba(245,216,229,1) 1%, rgba(221,70,100,1) 99%)
