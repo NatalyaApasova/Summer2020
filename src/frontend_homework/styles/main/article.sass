@@ -12,6 +12,9 @@
   margin-left: 60px
   padding-left: 50px
   user-select: none
+  @include tablet ()
+    padding-left: 40px
+    width: 350px
 
 .article-block__elem-two
   @include centered-flex ()
@@ -19,6 +22,11 @@
   margin: 0 auto
   width: 50%
   text-align: center
+  @include tablet ()
+    @include space-between-flex ()
+    width: 70%
+    flex-wrap: nowrap
+    text-align: left
 
 .article-block__text_sec
   font-size: 1.5rem
@@ -27,6 +35,8 @@
 .article-block__text_prim
   font-size: 1.5rem
   color: $primary-color
+  @include tablet ()
+    @include centered-flex ()
 
 .article-block__elem_centered
   @include centered-flex ()
@@ -37,6 +47,8 @@
 .article-title_secondary
   font-size: 3.5rem
   color: $secondary-color
+  @include tablet ()
+    font-size: 3rem
 
 .article-title_primary
   font-size: 3.5rem
@@ -45,4 +57,6 @@
 .footer-article-block
   width: 30%
   flex-wrap: wrap
+  @include tablet ()
+    width: 100%
   

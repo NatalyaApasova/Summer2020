@@ -1,3 +1,5 @@
+@use "../mixins" as *
+
 .decor-image
   z-index: 20
 
@@ -6,22 +8,35 @@
 
 .decor-image__elem-left
   top: 300px
+  @include tablet ()
+    top: 80px
 
 .decor-image__elem-right
   left: (100vw - 15)
+  @include tablet ()
+    top: 50px
 
 .decor-image__left-upper
   right: (100vw - 20)
   bottom: 880px
+  @include tablet ()
+    top: -780px
 
 .decor-image__left-lower
   right: 962px
   top: 370px
+  @include tablet ()
+    top: 360px
+    right: 585px
 
 .decor-image__right-upper
   left: (100vw - 20)
   bottom: 900px
+  @include tablet ()
+    top: 50px
 
 .decor-image__right-lower
   right: 182px
   bottom: 190px
+  @include tablet ()
+    right: 465px

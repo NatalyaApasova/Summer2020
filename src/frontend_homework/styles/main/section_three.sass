@@ -8,6 +8,13 @@
   position: relative
   bottom: 160px
   z-index: 6
+  @include tablet ()
+    height: 50vh
+    top: 1100px
+    flex-flow: column wrap
+  .article-block
+    @include tablet ()
+      width: 50%
 
 .section__content
   width: 40vw
@@ -19,6 +26,9 @@
   border-radius: 360px
   transition: transform 120s linear
   animation: rotate 20s linear infinite
+  @include tablet ()
+    width: 273px
+    height: 282px
 
 @keyframes rotate
   from

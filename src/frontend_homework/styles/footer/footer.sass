@@ -13,9 +13,14 @@
   align-items: flex-end
   position: absolute
   bottom: -150px
+  left: 0
   padding-bottom: 100px
   height: 520px
   width: 100%
+  @include tablet ()
+    top: 500px
+    flex-flow: column-reverse
+    align-items: flex-end
 
 .footer__elem_dark-bg
   background-color: $third-color
@@ -24,8 +29,19 @@
 .footer-article-block
   width: 30%
   padding-left: 30px
+  @include tablet ()
+    padding-right: 58px
 
 .nav-block
   width: 45%
   @include space-around-flex ()
   list-style: none
+  @include tablet ()
+    margin: 0 auto
+    width: 80%
+    flex-wrap: wrap
+
+.nav-block__column
+  @include tablet ()
+    width: 20%
+    height: 200px
