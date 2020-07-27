@@ -3,24 +3,39 @@ function reverseString(str) {
   for (let i = str.length - 1; i >= 0; i--) {
     arr.push(str[i]);
   }
-  let revString = '' + arr;
-  return revString.replace(/,/g, '');
+  return arr.join('');
 }
 
 function endsWith(str, substr) {
-  for (let i = str.length - 1; i >= 0; i--) {
-    for (let j = substr.length - 1; j >= 0; j--) {
-      return str[i].toLowerCase() === substr[j] ? true : false;
-    }
+  let isEqual = false;
+  if (substr.length > str.length) {
+    return false;
   }
+  let strCounter = str.length - 1;
+  for (let i = substr.length; i >= 0; i--) {
+    if (str[strCounter].toLowerCase() === substr[i]) {
+      isEqual = true;
+      strCounter--;
+    } else {
+      isEqual = false;
+    }
+  }  
+  return isEqual;
 }
 
 function startsWith(str, substr) {
-  for (let i = 0; i <= str.length - 1; i++) {
-    for (let j = 0; j <= substr.length - 1; j++) {
-      return str[i].toLowerCase() === substr[j] ? true : false;
-    }
+  let isEqual = false;
+  if (substr.length > str.length) {
+    return false;
   }
+  for (let i = 0; i <= substr.length - 1; i++) {
+    if (str[i].toLowerCase() === substr[i]) {
+      isEqual = true;
+    } else {
+      isEqual = false;
+    }
+  }  
+  return isEqual;
 }
 
 function isCamelCase(str) {
@@ -28,6 +43,9 @@ function isCamelCase(str) {
     return false;
   }
   for (let i = 0; i <= str.length - 1; i++) {
+    if ((str[i] === str[i].toUpperCase()) && (str[i + 1] === str[i + 1].toUpperCase()) || (str[str.length - 1] === str[str.length - 1].toUpperCase())) {
+      return false;
+    }
     if (str[i] === str[i].toUpperCase()) {
       return true;
     }
@@ -36,31 +54,34 @@ function isCamelCase(str) {
 }
 
 function isSnakeCase(str) {
-  if (str !== str.replace(/\W/g, '')) {
+  if (str !== str.replace(/^[ \_]+|[\_]+$\W/g, '')) {
     return false;
   }
-  return str.match(/_/g) ? true : false;
+  return str.match(/_[^\_+$]/g) ? true : false;
 }
 
 function isKebabCase(str) {
-  if (str !== str.replace(/[^a-zA-Z\d-]/g, '')) {
+  if (str !== str.replace(/^[ \-]+|[\-]+$[^a-zA-Z\d-]/g, '')) {
     return false;
   }
-  return str.match(/-/g) ? true : false;
+  return str.match(/-[^\-+$]/g) ? true : false;
 }
 
 function isNaN(value) {
-  return +value || +value === 0 ? false : true;
+  if (!value || value == !value) {
+    return new Error('It is a wrong value, which is null or indefined')
+  }
+  return +value ? false : true;
 }
 
 function isFinite(value) {
   return isNaN(value)
     ? new Error('Enter a number')
-    : (value !== Infinity ? true : false);
+    : value !== Infinity;
 }
 
 function isFalsy(value) {
-  return !value ? true : false;
+  return !value;
 }
 
 function countWords(text, word, caseSensitive) {
