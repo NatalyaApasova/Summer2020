@@ -2,12 +2,15 @@
 @use "../mixins" as *
 
 .section__block-two
+  align-items: flex-end
   position: absolute
-  top: 100vh
+  top: 630px
   width: 100%
   margin: 0 auto
   @include tablet ()
     top: 60vh
+  @include mobile ()
+    top: 445px
   .article-block__text_sec
     @include tablet ()
       margin-left: 50px
@@ -22,6 +25,8 @@
   @include centered-flex ()
   @include tablet ()
     flex-wrap: wrap
+  @include mobile ()
+    flex-wrap: wrap
 
 .card-group__elem
   margin: 20px 0
@@ -33,6 +38,13 @@
   @include tablet ()
     width: 50%
     height: 500px
+  @include mobile ()
+    width: 75%
+
+.card-img
+  @include mobile ()
+    height: 110px
+    width: 110px
 
 .card-img_rotate
   transition: 3s

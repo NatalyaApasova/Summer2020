@@ -12,12 +12,20 @@
     height: 50vh
     top: 1100px
     flex-flow: column wrap
+  @include mobile ()
+    height: 60vh
+    bottom: 55px
+    width: 100%
   .article-block
     @include tablet ()
       width: 50%
+    @include mobile ()
+      width: 100%
 
 .section__content
   width: 40vw
+  @include mobile ()
+   width: 50vw
 
 .section3-img
   width: 473px
@@ -27,8 +35,11 @@
   transition: transform 120s linear
   animation: rotate 20s linear infinite
   @include tablet ()
-    width: 273px
-    height: 282px
+    width: 280px
+    height: 292px
+  @include mobile ()
+    width: 174px
+    height: 174px
 
 @keyframes rotate
   from

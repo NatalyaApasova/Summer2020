@@ -21,6 +21,10 @@
     top: 500px
     flex-flow: column-reverse
     align-items: flex-end
+  @include mobile ()
+    top: 100px
+    flex-flow: column-reverse
+    align-items: flex-end
 
 .footer__elem_dark-bg
   background-color: $third-color
@@ -31,6 +35,8 @@
   padding-left: 30px
   @include tablet ()
     padding-right: 58px
+  @include mobile ()
+    padding-right: 58px
 
 .nav-block
   width: 45%
@@ -40,8 +46,15 @@
     margin: 0 auto
     width: 80%
     flex-wrap: wrap
+  @include mobile ()
+    margin: 0 auto
+    width: 80%
+    flex-wrap: wrap
 
 .nav-block__column
   @include tablet ()
+    width: 20%
+    height: 200px
+  @include mobile ()
     width: 20%
     height: 200px

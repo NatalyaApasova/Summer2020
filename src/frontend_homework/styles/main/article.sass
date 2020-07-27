@@ -7,7 +7,7 @@
   user-select: none
 
 .article-block__elem
-  width: 450px
+  width: 300px
   padding-top: 70px
   margin-left: 60px
   padding-left: 50px
@@ -15,6 +15,12 @@
   @include tablet ()
     padding-left: 40px
     width: 350px
+  @include mobile ()
+    width: 250px
+    align-items: center
+    margin: 0 auto
+    padding-top: 0
+    padding-left: 115px
 
 .article-block__elem-two
   @include centered-flex ()
@@ -27,16 +33,24 @@
     width: 70%
     flex-wrap: nowrap
     text-align: left
+  @include mobile ()
+    width: 90%
 
 .article-block__text_sec
   font-size: 1.5rem
   color: $secondary-color
+  @include mobile ()
+    font-size: 1.3rem
+    font-weight: 700
+    text-shadow: 1px 1px 2px $third-color,0 0 2rem $third-color
 
 .article-block__text_prim
   font-size: 1.5rem
   color: $primary-color
   @include tablet ()
     @include centered-flex ()
+  @include mobile ()
+    font-size: 1.3rem
 
 .article-block__elem_centered
   @include centered-flex ()
@@ -49,10 +63,17 @@
   color: $secondary-color
   @include tablet ()
     font-size: 3rem
+  @include mobile ()
+    font-size: 2rem
+    text-shadow: 1px 1px 2px $third-color,0 0 2rem $third-color
 
 .article-title_primary
   font-size: 3.5rem
   color: $primary-color
+  @include tablet ()
+    font-size: 3rem
+  @include mobile ()
+    font-size: 2rem
 
 .footer-article-block
   width: 30%

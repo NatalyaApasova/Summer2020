@@ -7,14 +7,10 @@
 
 .section__block
   position: relative
-  padding-bottom: 100px
   width: 100%
-  height: 200vh
+  height: 185vh
   @include tablet ()
     height: 50vh
-  .article-block__text_sec
-    @include tablet ()
-      margin-left: 0
 
 .section__bg-img
   width: 100%
@@ -25,6 +21,12 @@
   background-size: contain
   background-repeat: no-repeat
   z-index: -1
+  @include mobile ()
+    background-size: 90% 30%
+    top: 125px
+    left: -43px
+    transform: scale(1.5)
+    overflow: hidden
 
 .section__block_bg-primary
   background-color: $primary-color
