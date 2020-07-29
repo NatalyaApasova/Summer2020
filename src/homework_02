@@ -1,0 +1,136 @@
+function reverseString(str) {
+  let arr = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    arr.push(str[i]);
+  }
+  return arr.join('');
+}
+
+function endsWith(str, substr) {
+  let isEqual = false;
+  if (substr.length > str.length) {
+    return false;
+  }
+  let strCounter = str.length - 1;
+  for (let i = substr.length; i >= 0; i--) {
+    if (str[strCounter].toLowerCase() === substr[i]) {
+      isEqual = true;
+      strCounter--;
+    } else {
+      isEqual = false;
+    }
+  }  
+  return isEqual;
+}
+
+function startsWith(str, substr) {
+  let isEqual = false;
+  if (substr.length > str.length) {
+    return false;
+  }
+  for (let i = 0; i <= substr.length - 1; i++) {
+    if (str[i].toLowerCase() === substr[i]) {
+      isEqual = true;
+    } else {
+      isEqual = false;
+    }
+  }  
+  return isEqual;
+}
+
+function isCamelCase(str) {
+  if (str[0] === str[0].toUpperCase() || str !== str.replace(/[^0-9][^a-zA-Z]/g, '')) {
+    return false;
+  }
+  for (let i = 0; i <= str.length - 1; i++) {
+    if ((str[i] === str[i].toUpperCase()) && (str[i + 1] === str[i + 1].toUpperCase()) || (str[str.length - 1] === str[str.length - 1].toUpperCase())) {
+      return false;
+    }
+    if (str[i] === str[i].toUpperCase()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function isSnakeCase(str) {
+  if (str !== str.replace(/^[ \_]+|[\_]+$\W/g, '')) {
+    return false;
+  }
+  return str.match(/_[^\_+$]/g) ? true : false;
+}
+
+function isKebabCase(str) {
+  if (str !== str.replace(/^[ \-]+|[\-]+$[^a-zA-Z\d-]/g, '')) {
+    return false;
+  }
+  return str.match(/-[^\-+$]/g) ? true : false;
+}
+
+function isNaN(value) {
+  if (!value || value == !value) {
+    return new Error('It is a wrong value, which is null or indefined')
+  }
+  return +value ? false : true;
+}
+
+function isFinite(value) {
+  return isNaN(value)
+    ? new Error('Enter a number')
+    : value !== Infinity;
+}
+
+function isFalsy(value) {
+  return !value;
+}
+
+function countWords(text, word, caseSensitive) {
+  let wordsArr;
+  caseSensitive 
+    ? wordsArr = text.split(' ')
+    : (wordsArr = text.toLowerCase().split(' ')) && (word = word.toLowerCase());
+  words = 0;
+  for (let i = 0; i <= wordsArr.length - 1; i++) {
+    if (word === wordsArr[i]) {
+      words++;
+    }
+  }
+  return words;
+}
+
+function numbersBetween(numberOne, numberTwo) {
+  let num;
+  let allNumbers = [];
+  for (i = numberOne; i <= numberTwo; i++) {
+    allNumbers.push(i);
+  }
+  return allNumbers;
+}
+
+function oddNumbersBetween(numberOne, numberTwo) {
+  let num;
+  let allNumbers = [];
+  for (i = numberOne; i <= numberTwo; i++) {
+    if(i % 2 !== 0) {
+      allNumbers.push(i);
+    }
+  }
+  return allNumbers;
+}
+
+function digitInWord(digit) {
+  let dictionary = ['oh', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  let lastDigit = digit % 10;
+  return dictionary[lastDigit];
+}
+
+function createFunctions(num) {
+  let funkArr = [];
+  for (let i = 0; i < num; i++) {
+    let innerFunc = function() {
+      return i;
+    }
+    funkArr.push(innerFunc);
+  }
+  return funkArr;
+}
