@@ -3,55 +3,19 @@
 
 .section__block-two
   align-items: flex-end
-  position: absolute
-  top: 630px
+  margin-bottom: 30px
+  margin-top: -130px
+  position: relative
   width: 100%
-  margin: 0 auto
   @include tablet ()
-    top: 60vh
+    height: 800px
+    margin-top: -150px
   @include mobile ()
-    top: 445px
   .article-block__text_sec
     @include tablet ()
       margin-left: 50px
+      margin-top: -90px
 
 .section__block_bg-primary
   background-color: $primary-color
   z-index: 2
-  @include tablet ()
-    background-size: 100% 200vh
-
-.card-group
-  @include centered-flex ()
-  @include tablet ()
-    flex-wrap: wrap
-  @include mobile ()
-    flex-wrap: wrap
-
-.card-group__elem
-  margin: 20px 0
-
-.card
-  @include centered-flex ()
-  flex-wrap: wrap
-  width: 25%
-  @include tablet ()
-    width: 50%
-    height: 500px
-  @include mobile ()
-    width: 75%
-
-.card-img
-  @include mobile ()
-    height: 110px
-    width: 110px
-
-.card-img_rotate
-  transition: 3s
-  &:hover
-    transform: rotate(360deg)
-
-.card-img_rotate-left
-  transition: 3s
-  &:hover
-    transform: rotate(-360deg)

@@ -1,7 +1,10 @@
 @use "../mixins" as *
 
 .decor-image
-  z-index: 20
+  z-index: 10
+  @include mobile ()
+    width: 70px
+    height: 70px
 
 .decor-image_position
   position: absolute
@@ -10,33 +13,50 @@
   top: 300px
   @include tablet ()
     top: 80px
+  @include mobile ()
+    top: 675px
 
 .decor-image__elem-right
-  left: (100vw - 15)
+  left: 85vw
   @include tablet ()
     top: 50px
+  @include mobile ()
+    left: 80vw
 
 .decor-image__left-upper
-  right: (100vw - 20)
-  bottom: 880px
+  top: 2090px
+  left: 60px
   @include tablet ()
-    top: -780px
+    top: 1816px
+  @include mobile ()
+    top: 1449px
 
 .decor-image__left-lower
-  right: 962px
-  top: 370px
+  top: 2595px
+  left: 315px
   @include tablet ()
-    top: 360px
-    right: 585px
+    top: 2425px
+    left: 200px
+  @include mobile ()
+    top: 2275px
+    left: 120px
 
 .decor-image__right-upper
-  left: (100vw - 20)
-  bottom: 900px
+  top: 2080px
+  left: 85vw
   @include tablet ()
-    top: 50px
+    top: 1250px
+    left: 80vw
+  @include mobile ()
+    top: 1140px
+    left: 80vw
 
 .decor-image__right-lower
-  right: 182px
-  bottom: 190px
+  top: 2623px
+  right: 164px
   @include tablet ()
-    right: 465px
+    top: 2359px
+    right: 378px
+  @include mobile ()
+    top: 2170px
+    left: 200px

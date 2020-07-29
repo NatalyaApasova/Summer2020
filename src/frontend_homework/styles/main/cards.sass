@@ -1,0 +1,41 @@
+@use "../mixins" as *
+
+.card-group
+  @include centered-flex ()
+  @include tablet ()
+    flex-wrap: wrap
+  @include mobile ()
+    flex-wrap: wrap
+
+.card-group__elem
+  margin: 0 auto
+  @include tablet ()
+    margin-top: -70px
+
+.card
+  @include centered-flex ()
+  flex-wrap: wrap
+  width: 25%
+  @include tablet ()
+    width: 50%
+    height: 340px
+  @include mobile ()
+    width: 75%
+
+.card-img
+  @include tablet ()
+    width: 150px
+    height: 150px
+  @include mobile ()
+    height: 110px
+    width: 110px
+
+.card-img_rotate
+  transition: 3s
+  &:hover
+    transform: rotate(360deg)
+
+.card-img_rotate-left
+  transition: 3s
+  &:hover
+    transform: rotate(-360deg)

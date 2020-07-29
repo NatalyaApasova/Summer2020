@@ -2,44 +2,47 @@
 @use "../mixins" as *
 
 .section__block-three
-  @include centered-flex ()
-  height: 100vh
+  @include space-between-flex ()
+  height: 600px
   width: 100%
-  position: relative
-  bottom: 160px
   z-index: 6
   @include tablet ()
-    height: 50vh
-    top: 1100px
+    height: 400px
     flex-flow: column wrap
+    align-items: flex-start
   @include mobile ()
-    height: 60vh
-    bottom: 55px
-    width: 100%
+    margin-top: -200px
+    height: 680px
   .article-block
     @include tablet ()
+      padding-right: 0
       width: 50%
     @include mobile ()
       width: 100%
 
 .section__content
-  width: 40vw
+  width: 500px
+  @include tablet ()
+    width: 300px
   @include mobile ()
-   width: 50vw
+    width: 280px
 
 .section3-img
-  width: 473px
-  height: 482px
+  width: 373px
+  height: 382px
+  margin-left: 100px
   border: 1px solid $secondary-color
   border-radius: 360px
   transition: transform 120s linear
   animation: rotate 20s linear infinite
   @include tablet ()
+    margin-left: 5px
     width: 280px
     height: 292px
   @include mobile ()
     width: 174px
     height: 174px
+    margin-left: 5px
 
 @keyframes rotate
   from
