@@ -284,7 +284,7 @@
   cursor: pointer;
   color: #fff;
   background: #f5d8e5;
-  background: radial-gradient(circle, #f5d8e5 1%, #dd4664 99%);
+  background: radial-gradient(circle, #dd4664 1%, rgba(221, 70, 100, 0.6) 50%, #f5d8e5 99%);
 }
 
 .button__subscibe {
@@ -392,9 +392,9 @@
 }
 
 .section__block {
-  position: relative;
   width: 100%;
   height: 860px;
+  position: relative;
   margin-bottom: 30px;
   margin-top: 30px;
 }
@@ -410,9 +410,9 @@
 }
 
 .section__bg-img {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: relative;
   margin-top: -130px;
   background-image: url("../assets/section_first_bg.png");
   background-size: cover;
@@ -584,7 +584,7 @@
 }
 
 .decor-image {
-  z-index: 10;
+  z-index: 25;
 }
 @media screen and (min-width: 460px) and (max-width: 767px) {
   .decor-image {
@@ -695,10 +695,11 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  position: relative;
   height: 520px;
+  position: relative;
   padding-bottom: 100px;
   margin-top: -540px;
+  z-index: 10;
 }
 @media screen and (min-width: 460px) and (max-width: 767px) {
   .footer {
@@ -712,6 +713,7 @@
   justify-content: space-around;
   align-items: flex-end;
   width: 100%;
+  z-index: 20;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .footer__section {
@@ -748,26 +750,29 @@
 }
 
 .nav-block {
-  width: 45%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  list-style: none;
+  width: 45%;
   padding-bottom: 25px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .nav-block {
-    margin: 0 auto;
     width: 80%;
+    margin: 0 auto;
     flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 460px) and (max-width: 767px) {
   .nav-block {
-    justify-content: space-between;
     width: 80%;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
+}
+.nav-block ul {
+  list-style: none;
+  padding: 0;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -800,7 +805,7 @@
   cursor: pointer;
   color: #fff;
   background: #f5d8e5;
-  background: radial-gradient(circle, #f5d8e5 1%, #dd4664 99%);
+  background: radial-gradient(circle, #dd4664 1%, rgba(221, 70, 100, 0.6) 50%, #f5d8e5 99%);
 }
 
 .fa {
@@ -813,6 +818,102 @@
   align-items: center;
   width: 200px;
   margin-top: 20px;
+}
+
+.footer-wave {
+  height: 185px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  z-index: 15;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .footer-wave {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer-wave {
+    display: none;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 767px) {
+  .footer-wave {
+    display: none;
+  }
+}
+.footer-wave:before {
+  content: "";
+  display: block;
+  width: 1265px;
+  height: 229px;
+  position: absolute;
+  right: 0;
+  top: 92px;
+  border-radius: 76% 10% 48% 0;
+  background-color: #111;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer-wave:before {
+    display: none;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 767px) {
+  .footer-wave:before {
+    display: none;
+  }
+}
+.footer-wave:after {
+  content: "";
+  display: block;
+  width: 278px;
+  height: 175px;
+  position: absolute;
+  left: 200px;
+  top: 41px;
+  border-radius: 42% 83%;
+  background-color: #fff;
+  transform: rotateZ(166deg);
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer-wave:after {
+    display: none;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 767px) {
+  .footer-wave:after {
+    display: none;
+  }
+}
+
+.footer__section:before {
+  content: "";
+  display: block;
+  width: 312px;
+  height: 239px;
+  position: absolute;
+  left: -116px;
+  top: 43px;
+  border-radius: 171% 1% 54% 63%;
+  background-color: #111;
+  transform: rotateZ(44deg);
+  z-index: 16;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .footer__section:before {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer__section:before {
+    display: none;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 767px) {
+  .footer__section:before {
+    display: none;
+  }
 }
 
 html {
