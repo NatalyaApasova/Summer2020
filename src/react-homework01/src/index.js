@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App/App.js';
+import App from './App/App.jsx';
+
+const store = {
+  user: {
+    firstName: 'Andrew',
+    lastName: 'Hopkins'
+  },
+  avatar: {
+    image: `https://asictrade.com/catalog/view/theme/default/image/user-icon.png`,
+    alt: 'Avatar is here'
+  }
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App userData={store} />
   </React.StrictMode>,
   document.getElementById('root')
 );
