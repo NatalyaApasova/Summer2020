@@ -3,7 +3,7 @@ function isFunction(obj) {
 }
 
 function isObject(obj) {
-  return (obj && typeof(obj) === "object") || isFunction(obj) 
+  return (obj && typeof(obj) === "object") && !isFunction(obj)
   ? true
   : false;
 }
@@ -11,7 +11,7 @@ function isObject(obj) {
 function keys(obj) {
   if (isObject(obj)) {
     let keyArr = [];
-    for (key in obj) {
+    for (const key in obj) {
       if (obj.hasOwnProperty(key)) {
         keyArr.push(key);
       }
@@ -24,7 +24,7 @@ function keys(obj) {
 function allKeys(obj) {
   if (isObject(obj)) {
     let keyArr = [];
-    for (key in obj) {
+    for (const key in obj) {
         keyArr.push(key);
     }
     return keyArr;
@@ -35,8 +35,8 @@ function allKeys(obj) {
 function values(obj) {
   if (isObject(obj)) {
     let valueArr = [];
-    for (value of obj) {
-      valueArr.push(value);
+    for (const key of keys(obj)) {
+      valueArr.push(obj[key]);
     }
     return valueArr;
   }
@@ -46,7 +46,7 @@ function values(obj) {
 function pairs(obj) {
   if (isObject(obj)) {
     let pairsArr = [];
-    for (key in obj) {
+    for (const key in obj) {
       let arr = [];
       if (obj.hasOwnProperty(key)) {
         arr.push(key);
@@ -64,7 +64,7 @@ function pairs(obj) {
 function functions(obj) {
   if (isObject(obj)) {
   let funcNamesArr = [];
-  for (key of keys(obj)) {
+  for (const key of keys(obj)) {
     if (isFunction(obj[key])) {
       funcNamesArr.push(obj[key].name);
     }
