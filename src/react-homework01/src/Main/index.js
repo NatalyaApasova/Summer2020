@@ -1,11 +1,11 @@
 import React from 'react';
-import './Main.sass';
+import styles from './Main.module.sass';
 
 function Main(props) {
   return (
-    <main className='Main'>
+    <main className={styles.Main}>
       <div>
-        <img className="Avatar"
+        <img className={styles.Avatar}
           src={props.userData.image}
           alt={props.userData.alt}
         />

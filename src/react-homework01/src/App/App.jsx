@@ -1,8 +1,8 @@
 import React from 'react';
 import './App';
-import Header from '../Header/Header.jsx'
-import Main from '../Main/Main.jsx'
-import Footer from '../Footer/Footer.jsx'
+import Header from '../Header'
+import Main from '../Main'
+import Footer from '../Footer'
 
 function App(props) {
   return (
