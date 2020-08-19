@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Main.module.sass';
+import CardsContainer from '../Card/CardsContainer.js'
 
 function Main(props) {
   return (
@@ -9,6 +10,9 @@ function Main(props) {
           src={props.userData.image}
           alt={props.userData.alt}
         />
+      </div>
+      <div>
+        <CardsContainer />
       </div>
     </main>
   );
