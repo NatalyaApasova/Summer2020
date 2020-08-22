@@ -3,11 +3,11 @@ import styles from './Header.module.sass';
 
 function Header(props) {
   return (
-    <div className={styles.Header}>
+    <header className={styles.Header}>
       <div className={styles.UsernameBlock}>
         <p>{props.userData.firstName} {props.userData.lastName}</p>
       </div>
-    </div>
+    </header>
   );
 }
 
