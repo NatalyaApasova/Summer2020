@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from './Card';
 import ApiCall from '../../api/mockedApi.js';
 import styles from './CardsContainer.module.sass';
+import CardsCreationForm from './CardsCreationForm';
 
 class CardsContainer extends Component {
   constructor(props) {
@@ -25,16 +26,21 @@ class CardsContainer extends Component {
     const { cards } = this.state;
     
     return (
-      cards.length === 0
-      ? <div> No cards yet </div>
-      : <div >
-          <div className={styles.CardsContainer}>
-          {
-            this.state.cards.map((item) => {
-              return (<Card key={item.id} data={item} />)
-           })
-          }
-        </div>
+      <div>
+        {
+          cards.length === 0
+          ? <div> No cards yet </div>
+          : <div>
+              <div className={styles.CardsContainer}>
+              {
+                this.state.cards.map((item) => {
+                  return (<Card key={item.id} data={item} />)
+               })
+              }
+            </div>
+          </div>
+        }
+        <CardsCreationForm />
       </div>
     )
   }
