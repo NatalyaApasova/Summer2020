@@ -3,12 +3,13 @@ import styles from './Main.module.sass';
 import CardsContainer from '../Card/CardsContainer.js'
 
 function Main(props) {
+  const {image, alt} = props.userData;
   return (
     <main className={styles.Main}>
       <div>
         <img className={styles.Avatar}
-          src={props.userData.image}
-          alt={props.userData.alt}
+          src={image}
+          alt={alt}
         />
       </div>
       <div>

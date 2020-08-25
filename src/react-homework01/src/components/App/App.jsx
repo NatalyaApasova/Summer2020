@@ -1,17 +1,16 @@
 import React from 'react';
-import './App';
+import styles from './App.module.sass';
 import Header from '../Header'
 import Main from '../Main'
 import Footer from '../Footer'
 
-function App(props) {
+export default function App(props) {
+  const { user, avatar } = props.userData;
   return (
-    <div className="App">
-      <Header userData={props.userData.user} />
-      <Main userData={props.userData.avatar}/>
-      <Footer />      
+    <div className={styles.App}>
+      <Header userData={user} />
+      <Main userData={avatar} />
+      <Footer />
     </div>
   );
 }
-
-export default App;
