@@ -4,7 +4,6 @@ import styles from './CardsCreationForm.module.sass';
 export default function CardsCreationForm(props) {
   return (
     <div className={styles.CardsCreationForm}>
-      <input type="text" placeholder="id"></input>
       <input type="text" placeholder="image URL"></input>
       <input type="text" placeholder="title"></input>
       <input type="text" placeholder="gender"></input>

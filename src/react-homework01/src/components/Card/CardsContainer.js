@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import styles from './CardsContainer.module.sass';
 import Card from './Card';
 import ApiCall from '../../api/mockedApi.js';
-import styles from './CardsContainer.module.sass';
 import CardsCreationForm from './CardsCreationForm';
 
 class CardsContainer extends Component {
@@ -9,10 +9,10 @@ class CardsContainer extends Component {
     super(props);
     this.state = {
       cards: []
-    }
+    };
   }
 
-  async componentDidMount(prevState) {
+  async componentDidMount() {
     await ApiCall()
       .then((result) => {
         this.setState({cards: JSON.parse(result)});
@@ -22,6 +22,19 @@ class CardsContainer extends Component {
       })
   }
 
+  handleRemoveClick = (e, id) => {
+    const newCardsState = {...this.state.cards};
+    console.log(newCardsState)
+    let newCardsArr = Object.values(newCardsState).filter((card) => {
+      console.log(card.id)
+      console.log(card.id !== id)
+      console.log(id)
+      return card.id !== id;
+    })
+    console.log(newCardsArr)
+    this.setState({cards: newCardsArr});
+  }
+
   render() {
     const { cards } = this.state;
     
@@ -29,12 +42,12 @@ class CardsContainer extends Component {
       <div>
         {
           cards.length === 0
-          ? <div> No cards yet </div>
+          ? <div className={styles.NoCards}> No cards yet </div>
           : <div>
               <div className={styles.CardsContainer}>
               {
                 this.state.cards.map((item) => {
-                  return (<Card key={item.id} data={item} />)
+                  return (<Card key={item.id} data={item} remove={this.handleRemoveClick} />)
                })
               }
             </div>
