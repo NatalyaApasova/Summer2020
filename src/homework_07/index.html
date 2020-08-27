@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="list" class="list">
+      <li class="first">First level
+        <ol>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="first">First level
+        <ol>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="first">First level
+        <ol>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+          <li class="hidden">Second level
+            <ol>
+              <li class="hidden">Third level</li>
+              <li class="hidden">Third level</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <div class="carousel-container">
+      <div id="backward">
+        <span><</span>
+      </div>
+      <div class="content">
+        <ul id="carousel">
+            <li><img src="assets/cheetah.jpg" alt="cheetah"></li>
+            <li><img src="assets/monkeys.jpg" alt="monkeys"></li>
+            <li><img src="assets/tiger.jpg" alt="tiger"></li>
+            <li><img src="assets/zebras.jpg" alt="zebra"></li>
+            <li><img src="assets/pandas.jpg" alt="pandas"></li>
+            <li><img src="assets/giraffes.jpg" alt="giraffes"></li>
+            <li><img src="assets/lion.jpg" alt="lion"></li>
+            <li><img src="assets/red_panda.jpg" alt="red panda"></li>
+        </ul>
+      </div>
+      <div id="forward">
+        <span>></span>
+      </div>
+    </div>
+    <div>
+      <div>
+        <input type="text" name="todo" id="todo-input">
+        <button type="button" id="todo-button">Add</button>
+      </div>
+      <div>
+        <ol id="todo-items"></ol>
+      </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

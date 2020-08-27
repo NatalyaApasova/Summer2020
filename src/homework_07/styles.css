@@ -1,0 +1,84 @@
+.hidden {
+  display: none;
+}
+
+.list {
+  cursor: pointer;
+}
+
+.list li {
+  font-size: 24px;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+#backward, #forward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  font-size: 120px;
+  font-weight: 700;
+  background-color: #bab;
+  color: #d2f;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  opacity: .5;
+  z-index: 1;
+}
+
+#backward {
+  right: 90%;
+}
+
+#forward {
+  left: 90%;
+}
+.content {
+  width: 80%;
+  overflow: hidden;
+}
+
+#carousel {
+  width: 9999px;
+  padding-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 320px;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: margin-left .2s;
+}
+
+#carousel li {
+  display: block;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+#carousel img {
+  width: 400px;
+  height: 300px;
+  padding-right: 10px;
+}
+
+#todo-input {
+  width: 50%;
+  font-size: 24px;
+}
+
+#todo-items {
+  font-size: 24px;
+}
