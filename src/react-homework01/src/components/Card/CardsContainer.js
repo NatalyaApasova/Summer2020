@@ -8,6 +8,10 @@ class CardsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      image: '',
+      title: '',
+      gender: '',
+      price: '',
       cards: []
     };
   }
@@ -24,14 +28,32 @@ class CardsContainer extends Component {
 
   handleRemoveClick = (e, id) => {
     const newCardsState = {...this.state.cards};
-    console.log(newCardsState)
     let newCardsArr = Object.values(newCardsState).filter((card) => {
-      console.log(card.id)
-      console.log(card.id !== id)
-      console.log(id)
       return card.id !== id;
     })
-    console.log(newCardsArr)
+    this.setState({cards: newCardsArr});
+  }
+
+  handleInputChange = (e) => {
+    const target = e.target;
+    let value = target.value;
+    const name = target.name;
+    
+    this.setState({[name]: value});
+  }
+
+  handleSubmit = (e, id) => {
+    const {image, title, gender, price, cards} = this.state;
+    const newCardsState = {...cards};
+    const newCard = {
+      id: Math.floor(Math.random() * (9999999 - 1) + 1) + price.toString(),
+      imageUrl: image,
+      title,
+      gender,
+      price
+    }
+    const newCardsArr = Object.values(newCardsState);
+    newCardsArr.push(newCard);
     this.setState({cards: newCardsArr});
   }
 
@@ -46,14 +68,14 @@ class CardsContainer extends Component {
           : <div>
               <div className={styles.CardsContainer}>
               {
-                this.state.cards.map((item) => {
+                cards.map((item) => {
                   return (<Card key={item.id} data={item} remove={this.handleRemoveClick} />)
                })
               }
             </div>
           </div>
         }
-        <CardsCreationForm />
+        <CardsCreationForm addCard={this.handleSubmit} inputChange={this.handleInputChange} />
       </div>
     )
   }
