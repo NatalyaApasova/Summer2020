@@ -12,7 +12,11 @@ class CardsContainer extends Component {
       title: '',
       gender: '',
       price: '',
-      cards: []
+      cards: [],
+      titleWarning: '',
+      genderWarning: '',
+      priceWarning: '',
+      isValid: true
     };
   }
 
@@ -20,9 +24,6 @@ class CardsContainer extends Component {
     await ApiCall()
       .then((result) => {
         this.setState({cards: JSON.parse(result)});
-      })
-      .catch((err) => {
-        return new Error("Oops!" + err)
       })
   }
 
@@ -46,19 +47,54 @@ class CardsContainer extends Component {
     const {image, title, gender, price, cards} = this.state;
     const newCardsState = {...cards};
     const newCard = {
-      id: Math.floor(Math.random() * (9999999 - 1) + 1) + price.toString(),
+      id: Math.floor(Math.random() * (9999999 - 9) + 9),
       imageUrl: image,
       title,
       gender,
       price
     }
     const newCardsArr = Object.values(newCardsState);
-    newCardsArr.push(newCard);
-    this.setState({cards: newCardsArr});
+    let newWarningRequired = "This field is required";
+    if (this.handleValidation()) {
+      newWarningRequired = "";
+      newCardsArr.push(newCard);
+      this.setState({cards: newCardsArr});
+    } else {
+      if (!title) {
+        this.setState({titleWarning: newWarningRequired});
+      }
+      if (!gender) {
+        this.setState({genderWarning: newWarningRequired});
+      }
+      if (!price) {
+        this.setState({priceWarning: newWarningRequired});
+      }
+      return null;
+    }
+  }
+
+  handleValidation = () => {
+    const {title, gender, price} = this.state;
+    const newWarningRequired = "";
+    let newIsValid = true;
+    this.setState({titleWarning: newWarningRequired});
+    this.setState({genderWarning: newWarningRequired});
+    this.setState({priceWarning: newWarningRequired});
+    if (!title) {
+      newIsValid = false;
+    }
+    if (!gender) {
+      newIsValid = false;
+    }
+    if (!price) {
+      newIsValid = false;
+    }
+    this.setState({isValid: newIsValid});
+    return newIsValid;
   }
 
   render() {
-    const { cards } = this.state;
+    const {cards} = this.state;
     
     return (
       <div>
@@ -75,7 +111,7 @@ class CardsContainer extends Component {
             </div>
           </div>
         }
-        <CardsCreationForm addCard={this.handleSubmit} inputChange={this.handleInputChange} />
+        <CardsCreationForm data={this.state} addCard={this.handleSubmit} inputChange={this.handleInputChange} />
       </div>
     )
   }

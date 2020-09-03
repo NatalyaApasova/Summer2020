@@ -6,8 +6,8 @@ export default function Card(props) {
   return (
     <div className={styles.Card}>
       <button className={styles.RemoveButton} id={id} onClick={() => props.remove(this, id)}>X</button>
-      <div className={styles.cardImgWrapper}>
-        <img src={imageUrl} className={styles.cardImg} alt="no image" width="130" height="140"></img>
+      <div className={styles.CardImgWrapper}>
+        <img src={imageUrl} className={styles.CardImg} alt="no image" width="130" height="140"></img>
       </div>
       <div>
         <p>{title}</p>
