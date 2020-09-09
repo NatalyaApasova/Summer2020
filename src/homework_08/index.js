@@ -259,7 +259,7 @@ function getRandom(min, max) {
 }
 
 async function httpGet(url, data) {
-  let randSec = Math.floor(getRandom(0, 3)) * 1000;
+  let randSec = Math.floor(getRandom(1, 3)) * 1000;
   let random;
   let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
