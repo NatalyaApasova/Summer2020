@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import LoginPage from './LoginPage';
 import { setLoggedUserData, setUnloggedData, setLoggedState } from '../../redux/actions/index.js';
+import Main from './index';
 
 const mapStateToProps = state => ({
   authState: state.authState,
@@ -8,8 +8,7 @@ const mapStateToProps = state => ({
     user: {
       id: '',
       login: state.userData.login,
-      password: state.userData.password,
-      cards: []
+      password: state.userData.password
     }
   },
   isLogged: state.authState.isLogged
@@ -21,9 +20,9 @@ const mapDispatchToProps = {
   setLoggedState
 };
 
-const LoginPageContainer = connect(
+const MainContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(LoginPage);
+)(Main);
 
-export default LoginPageContainer;
+export default MainContainer;

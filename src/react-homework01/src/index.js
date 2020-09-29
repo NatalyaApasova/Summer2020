@@ -1,23 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
+
 import './index.css';
 import App from './components/App/App';
 
-const store = {
-  user: {
-    firstName: 'Andrew',
-    lastName: 'Hopkins'
-  },
-  avatar: {
-    image: `https://asictrade.com/catalog/view/theme/default/image/user-icon.png`,
-    alt: 'Avatar is here'
-  }
-};
-
 ReactDOM.render(
-  <React.StrictMode>
-    <App userData={store} />
-  </React.StrictMode>,
+    <Provider store={store}>
+      <App />
+    </Provider>,
   document.getElementById('root')
 );
+
 
