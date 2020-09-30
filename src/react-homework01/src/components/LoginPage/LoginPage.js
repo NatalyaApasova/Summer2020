@@ -1,10 +1,10 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import styles from './LoginPage.module.sass';
-import { authState } from '../../redux/reducers/auth.js';
-import { userData } from '../../redux/reducers/user.js';
 
 export default function LoginPage(props) {
+  const { isLogged } = props.authState;
+
   const handleInputChange = function(e) {
     const { value, name } = e.target;
     props.setLoggedUserData({ [name]: value });
@@ -19,7 +19,7 @@ export default function LoginPage(props) {
   const { from } = props.location.state || { from: { pathname: '/' } }
 
   return (
-    !props.authState.isLogged
+    !isLogged
       ? 
         (  
           <div className={ styles.LoginWrapper }>
@@ -36,7 +36,7 @@ export default function LoginPage(props) {
           <>    
             <Redirect to={{
               pathname: '/profile',
-              state: { from: {from} }
+              state: { from: { from } }
             }} />
           </>
         )

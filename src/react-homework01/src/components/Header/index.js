@@ -1,18 +1,20 @@
 import React from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import styles from './Header.module.sass';
-import {authState} from '../../redux/reducers/auth.js';
-import {userData} from '../../redux/reducers/user.js';
 
 function Header(props) {
+  const { isLogged } = props.authState;
+  const { login } = props.userData.user;
+  const { setUnloggedData, setUnloggedState } = props;
+
   const AuthButton = withRouter(({ history }) => (
-    props.authState.isLogged
+    isLogged
       ? <div>
           <button
             className={styles.SignOutButton}
             onClick={() => {
-              props.setUnloggedData();
-              props.setUnloggedState();
+              setUnloggedData();
+              setUnloggedState();
               history.push('/');
        }}>Sign out</button>
         </div>
@@ -23,7 +25,7 @@ function Header(props) {
     <header className={styles.Header}>
       <>
         {
-          props.authState.isLogged
+          isLogged
             ? (
                 <div className={styles.NavBlock}>
                   <NavLink to="/profile">PROFILE</NavLink>
@@ -33,9 +35,13 @@ function Header(props) {
             : null
         }
         <div className={styles.UsernameBlock}>
-          <p>{props.authState.isLogged
-            ? props.userData.user.login
-            : null}</p>
+          <p>
+            {
+              isLogged
+                ? login
+                : null
+            }
+          </p>
         </div>
       </>
       <AuthButton />

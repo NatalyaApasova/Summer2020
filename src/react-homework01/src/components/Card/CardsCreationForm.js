@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './CardsCreationForm.module.sass';
-import {cardsState} from '../../redux/reducers/cards.js';
 
 export default function CardsCreationForm(props) {
-  // const {titleWarning, genderWarning, priceWarning} = props.data;
   let newCard = {
     id: '',
     image: '',
@@ -22,11 +20,14 @@ export default function CardsCreationForm(props) {
   };
 
   const handleSubmit = function() {
+    const { addCard } = props;
     let id =  Math.floor(Math.random() * (9999999 - 9) + 9);
     newCard = Object.assign({}, newCard, {
       id: id
     })
-    props.addCard(newCard)
+    if (newCard['title'] && newCard['gender'] && newCard['price']) {
+      addCard(newCard);
+    }
   }
 
   return (

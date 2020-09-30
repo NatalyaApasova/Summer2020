@@ -1,12 +1,5 @@
-import {setLoggedUserData, setUnloggedState} from './../actions/index';
-
 const InitialUserState = {
-  user: {
-    image: {
-      src: 'https://asictrade.com/catalog/view/theme/default/image/user-icon.png',
-      alt: 'Avatar is here'
-    }
-  }
+  user: {}
 }
 
 export default function userData(state = InitialUserState, action) {

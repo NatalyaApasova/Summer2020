@@ -1,5 +1,3 @@
-import { setLoggedState, setUnloggedState } from './../actions';
-
 const InitialAuthState = {
   isLogged: false,
   text: 'You are not logged in'

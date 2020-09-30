@@ -1,3 +1,5 @@
+import ApiCall from '../../api/mockedApi.js';
+
 export const ADD_CARD = 'ADD_CARD';
 export const REMOVE_CARD = 'REMOVE_CARD';
 export const LOG_IN = 'LOG_IN';
@@ -45,8 +47,10 @@ export function removeCard(id) {
   }
 }
 
-
-// export function handleCardsRequest(dispatch) {
-//   mockedApi()
-//     .then(cardsData => dispatch(showCards(cardsData)))
-// }
+export function handleCardsRequest() {
+  return function(dispatch) {
+    ApiCall()
+      .then(cardsData => JSON.parse(cardsData))
+      .then(result => result.map((card) => dispatch(addCard(card))))
+  }
+}

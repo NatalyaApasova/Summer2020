@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-import {authState} from '../../redux/reducers/auth.js'
 import Header from './index';
 import { connect } from 'react-redux';
 import { setLoggedState, setUnloggedState, setUnloggedData } from '../../redux/actions/index.js';
