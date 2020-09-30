@@ -24,12 +24,12 @@ class LoginPageContainer extends Component {
 
   handleSubmit = () => {
     const {login, password} = this.state;
-    const newLogin = login;
-    const newPassword = password;
     let newIsLogged = true;
-    this.setState({login: newLogin});
-    this.setState({password: newPassword});
-    this.setState({isLogged: newIsLogged});
+    this.setState({
+      login,
+      password,
+      isLogged: newIsLogged
+    });
     this.login();
   }
 

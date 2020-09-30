@@ -29,17 +29,12 @@ class CardsContainer extends Component {
 
   handleRemoveClick = (e, id) => {
     const newCardsState = {...this.state.cards};
-    let newCardsArr = Object.values(newCardsState).filter((card) => {
-      return card.id !== id;
-    })
+    const newCardsArr = Object.values(newCardsState).filter(card => card.id !== id)
     this.setState({cards: newCardsArr});
   }
 
   handleInputChange = (e) => {
-    const target = e.target;
-    let value = target.value;
-    const name = target.name;
-    
+    const {name, value} = e.target; 
     this.setState({[name]: value});
   }
 
@@ -77,18 +72,15 @@ class CardsContainer extends Component {
     const {title, gender, price} = this.state;
     const newWarningRequired = "";
     let newIsValid = true;
-    this.setState({titleWarning: newWarningRequired});
-    this.setState({genderWarning: newWarningRequired});
-    this.setState({priceWarning: newWarningRequired});
-    if (!title) {
+    this.setState({
+      titleWarning: newWarningRequired,
+      genderWarning: newWarningRequired,
+      priceWarning: newWarningRequired
+    });
+    if (!title || !gender || !price) {
       newIsValid = false;
     }
-    if (!gender) {
-      newIsValid = false;
-    }
-    if (!price) {
-      newIsValid = false;
-    }
+
     this.setState({isValid: newIsValid});
     return newIsValid;
   }
