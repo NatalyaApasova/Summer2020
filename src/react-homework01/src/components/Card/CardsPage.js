@@ -8,7 +8,9 @@ export default function CardsPage(props) {
   const { image } = props.userData.user;
 
   useEffect(() => {
-    handleCardsRequest();
+    if (!cards.length) {
+      handleCardsRequest();
+    }
   }, [])
 
   return (
