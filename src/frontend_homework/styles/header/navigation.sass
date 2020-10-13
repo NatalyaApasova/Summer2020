@@ -1,0 +1,35 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.header__navigation
+  width: 60%
+  @include mobile ()
+    flex-flow: column wrap
+
+.navigation-list
+  @include space-around-flex()
+  @include mobile ()
+    position: absolute
+    top: 120px
+    left: -75px
+    flex-flow: column
+
+.navigation-list__item
+  display: inline-block
+  width: 20%
+  font-weight: 700
+  font-size: 1rem
+  list-style: none
+  color: $secondary-color
+  user-select: none
+  .link_colors-sec
+    @include mobile ()
+      font-size: 1.4rem
+      text-shadow: 1px 1px 2px $third-color,0 0 2rem $third-color
+
+.navigation-list__item_hover
+  &:hover
+    @include pointer()
+    transform: scaleY(2)
+    @include mobile ()
+      transform: none

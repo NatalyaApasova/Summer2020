@@ -1,0 +1,22 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.round
+  @include centered-flex ()
+  width: 40px
+  height: 40px
+  border: $border
+  @include radius ()
+
+.round_light
+  background-color: $secondary-color
+  &:hover
+    @include hover ()
+
+.fa
+  color: $third-color
+
+.social-block
+  @include space-between-flex ()
+  width: 200px
+  margin-top: 20px

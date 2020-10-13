@@ -1,0 +1,21 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.section__block-two
+  align-items: flex-end
+  width: 100%
+  margin-bottom: 30px
+  margin-top: -130px
+  position: relative
+  @include tablet ()
+    height: 800px
+    margin-top: -150px
+  @include mobile ()
+  .article-block__text_sec
+    @include tablet ()
+      margin-left: 50px
+      margin-top: -90px
+
+.section__block_bg-primary
+  background-color: $primary-color
+  z-index: 2

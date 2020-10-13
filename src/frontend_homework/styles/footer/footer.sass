@@ -1,0 +1,67 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.footer
+  display: flex
+  justify-content: space-around
+  align-items: flex-end
+  height: 520px
+  position: relative
+  padding-bottom: 100px
+  margin-top: -540px
+  z-index: 10
+  @include mobile ()
+    margin-top: -70px
+    padding-right: 58px
+
+.footer__section
+  display: flex
+  justify-content: space-around
+  align-items: flex-end
+  width: 100%
+  z-index: 20
+  @include tablet ()
+    flex-flow: column-reverse
+    align-items: flex-end
+  @include mobile ()
+    flex-flow: column-reverse
+    align-items: flex-end
+
+.footer_dark-bg
+  background-color: $third-color
+  color: $secondary-color
+
+.footer-article-block
+  width: 30%
+  padding-left: 30px
+  @include tablet ()
+    padding-right: 58px
+  @include mobile ()
+    width: 50%
+    padding-top: 60px
+
+.nav-block
+  display: flex
+  justify-content: space-around
+  align-items: flex-start
+  width: 45%
+  padding-bottom: 25px
+  @include tablet ()
+    width: 80%
+    margin: 0 auto
+    flex-wrap: wrap
+  @include mobile ()
+    width: 80%
+    justify-content: space-between
+    flex-wrap: wrap
+  ul
+    list-style: none
+    padding: 0
+
+.nav-block__column
+  @include tablet ()
+    width: 20%
+    height: 200px
+  @include mobile ()
+    width: 20%
+    height: 200px
