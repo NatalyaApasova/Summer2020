@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>homework_06</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+  	.circle {
+      width: 200px;
+      height: 200px;
+      position:absolute;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-name: orbit;
+      -webkit-animation-duration: 500ms;
+      top: 50px;
+      left: 50px;
+    }
+
+    @-webkit-keyframes orbit { 
+      from { -webkit-transform: rotate(0deg) } 
+      to { -webkit-transform: rotate(360deg) } 
+    }
+  </style>
+</head>
+<body>
+  <button id="task-four">four</button>
+  <button id="task-five">five</button>
+  <button id="task-seven">seven</button>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

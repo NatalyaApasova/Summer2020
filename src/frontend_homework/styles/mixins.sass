@@ -1,0 +1,45 @@
+@use "variables" as *
+
+@mixin centered-flex ()
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin space-around-flex ()
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+@mixin space-between-flex ()
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+@mixin pointer ()
+  cursor: pointer
+
+@mixin radius ()
+  border-radius: 45px
+
+@mixin ref-reset ()
+  text-decoration: none
+  background-color: transparent
+  cursor: pointer
+  &:visited
+    text-decoration: none
+  &:active
+    text-decoration: none
+
+@mixin hover ()
+  @include pointer ()
+  color: $secondary-color
+  background: rgb(245,216,229)
+  background: radial-gradient(circle, rgba(221, 70, 100, 1) 1%, rgba(221, 70, 100, 0.6) 50%, rgba(245, 216, 229, 1) 99%)
+
+@mixin tablet ()
+  @media screen and (min-width: 768px) and (max-width: 1024px)
+    @content
+
+@mixin mobile ()
+  @media screen and (min-width: 460px) and (max-width: 767px)
+    @content

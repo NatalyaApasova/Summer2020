@@ -1,0 +1,38 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.section
+  display: flex
+  align-items: center
+
+.section__block
+  width: 100%
+  height: 860px
+  position: relative
+  margin-bottom: 30px
+  margin-top: 30px
+  @include tablet ()
+    height: 650px
+  @include mobile ()
+    height: 450px
+
+.section__bg-img
+  width: 100%
+  height: 100%
+  position: relative
+  margin-top: -130px
+  background-image: url("../assets/section_first_bg.png")
+  background-size: cover
+  background-repeat: no-repeat
+  z-index: -1
+  @include tablet ()
+    background-size: 100% 100%
+  @include mobile ()
+    background-size: 100% 100%
+    overflow: hidden
+
+.section__block_bg-primary
+  background-color: $primary-color
+
+.section__block_bg-secondary
+  background-color: $secondary-color

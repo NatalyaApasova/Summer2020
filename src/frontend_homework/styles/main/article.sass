@@ -1,0 +1,96 @@
+@use "../variables" as *
+@use "../mixins" as *
+
+.article-block
+  @include space-around-flex ()
+  width: 100%
+  user-select: none
+  flex-flow: column wrap
+  @include mobile ()
+    width: 400px
+
+.article-wrapper
+  @include tablet ()
+    width: 35%
+    margin-right: 0
+
+.article-block__elem
+  width: 300px
+  padding-top: 160px
+  margin-left: 60px
+  padding-left: 50px
+  user-select: none
+  @include tablet ()
+    padding-left: 0
+    padding-top: 150px
+    width: 350px
+  @include mobile ()
+    width: 250px
+    align-items: center
+    margin: -55px auto
+    padding-top: 140px
+
+.article-block__elem-two
+  @include centered-flex ()
+  flex-wrap: wrap
+  margin: 0 auto
+  width: 50%
+  text-align: center
+  @include tablet ()
+    width: 70%
+    height: 240px
+  @include mobile ()
+    width: 90%
+
+.article-block__text_sec
+  font-size: 1.5rem
+  color: $secondary-color
+  @include tablet ()
+    margin-top: 0
+    margin-bottom: 0
+  @include mobile ()
+    font-size: 1.3rem
+    font-weight: 700
+    text-shadow: 1px 1px 2px $third-color,0 0 2rem $third-color
+
+.article-block__text_prim
+  font-size: 1.5rem
+  color: $primary-color
+  @include tablet ()
+    @include centered-flex ()
+  @include mobile ()
+    font-size: 1.3rem
+
+.article-block__elem_centered
+  @include centered-flex ()
+
+.article-block__text_centered
+  text-align: center
+
+.article-title
+  @include tablet ()
+    margin: 0
+
+.article-title_secondary
+  font-size: 3.5rem
+  color: $secondary-color
+  @include tablet ()
+    font-size: 3rem
+  @include mobile ()
+    font-size: 2rem
+    text-shadow: 1px 1px 2px $third-color, 0 0 2rem $third-color
+
+.article-title_primary
+  font-size: 3.5rem
+  color: $primary-color
+  @include tablet ()
+    font-size: 3rem
+  @include mobile ()
+    font-size: 2rem
+
+.footer-article-block
+  width: 30%
+  flex-wrap: wrap
+  @include tablet ()
+    width: 100%
+  
